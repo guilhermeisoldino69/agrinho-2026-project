@@ -3,30 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Projeto Web</title>
+    <title>Simulador de Produção Leiteira - Agrinho</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <header>
-            <h1>Bem-vindo ao Meu Projeto</h1>
-            <p>Uma estrutura simples de HTML, CSS e JS.</p>
+            <h1>Fazenda Inteligente Agrinho</h1>
+            <p>Gerencie sua produção leiteira com sustentabilidade e tecnologia.</p>
         </header>
 
-        <main>
-            <div class="card">
-                <h2>Interatividade</h2>
-                <p id="status-text">Clique no botão abaixo para ver a mágica acontecer.</p>
-                <button id="action-btn">Clique Aqui</button>
-            </div>
+        <main class="simulador-grid">
+            <section class="status-panel">
+                <div class="card">
+                    <h3>Produção Atual</h3>
+                    <p id="leite-total">0 L/dia</p>
+                    <div class="barra-progresso"><div id="barra-leite" class="progresso"></div></div>
+                </div>
+                <div class="card">
+                    <h3>Saúde do Rebanho</h3>
+                    <p id="saude-status">100%</p>
+                    <div class="barra-progresso"><div id="barra-saude" class="progresso"></div></div>
+                </div>
+            </section>
+
+            <section class="interacao">
+                <div class="vaca-display">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1998/1998610.png" alt="Vaca Animada" id="vaca-img">
+                    <p id="feedback-msg">A fazenda está pronta para começar!</p>
+                </div>
+
+                <div class="controles">
+                    <button onclick="acao('alimentar')">🌾 Alimentar (Pastagem)</button>
+                    <button onclick="acao('limpar')">🧼 Higienizar Ordenha</button>
+                    <button onclick="acao('vacinar')">💉 Vacinar/Saúde</button>
+                    <button onclick="resetar()">🔄 Reiniciar Ciclo</button>
+                </div>
+            </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 - Desenvolvido com Gemini</p>
+            <p>Projeto Educativo - Concurso Agrinho 2026</p>
         </footer>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
